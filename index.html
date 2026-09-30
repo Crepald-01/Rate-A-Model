@@ -2,7 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Rate Models">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="manifest" href="manifest.webmanifest">
 <title>Rate the Models</title>
 <meta name="description" content="Rate every major AI model released in September 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -213,6 +220,88 @@ footer a{color:inherit}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:700px){.grid.list .card{flex-wrap:wrap}.grid.list .card .top,.grid.list .card .avgrow{width:auto}.grid.list .card h3{flex:1 1 60%}.seg{width:100%}.seg button{padding:8px 6px}}
 @media(max-width:600px){.hero{padding-top:56px}.user span{display:none}.drawer{padding:26px 20px}.stat{min-width:100px;padding:12px 18px}}
+
+/* ---------- touch + mobile ---------- */
+html{-webkit-text-size-adjust:100%}
+button,a,.card,select{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+body.lock{overflow:hidden}
+.grab{display:none}
+.toast{bottom:calc(28px + env(safe-area-inset-bottom))}
+@media(hover:none){
+  .kbhint,#kb{display:none!important}
+  .card:hover{box-shadow:none;border-color:var(--line)}
+  .card:hover .glow{opacity:0}
+  .card:hover .cta{transform:none}
+  .star:hover,.save:hover,.chip:hover,.btn:hover{transform:none}
+  .yr .hint{display:none}
+  .card:active{transform:scale(.985)}
+  .btn:active,.chip:active,.star:active{transform:scale(.94)}
+}
+@media(max-width:700px){
+  .wrap{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+  nav .wrap{height:58px;gap:8px}
+  .logo{font-size:21px;white-space:nowrap;flex:none;gap:7px}
+  .nav-r{gap:6px;flex:none}
+  .btn{white-space:nowrap;padding:10px 15px;min-height:40px}
+  .btn.icon{flex:none;width:40px;height:40px;padding:0}
+  .mesh i{filter:blur(70px)}
+  .mesh i:nth-child(3){display:none}
+
+  .hero{padding:44px 0 12px}
+  .eyebrow{font-size:12px;padding:5px 12px;margin-bottom:20px}
+  .lead{font-size:16px;margin-bottom:22px}
+  .stats{gap:8px;margin-top:30px;flex-wrap:nowrap}
+  .stat{flex:1;min-width:0;padding:12px 8px;border-radius:16px}
+  .stat b{font-size:34px}
+  .stat span{font-size:12px}
+  .marquee{margin-top:22px}
+  .track span{font-size:22px}
+
+  .tools{gap:8px;margin:24px 0 10px}
+  .search{flex:1 1 100%;min-width:0}
+  .search input,select,.field input,textarea{font-size:16px}
+  .search input{padding-top:13px;padding-bottom:13px}
+  select{flex:1;min-height:46px}
+  .seg.view{flex:none;width:auto}
+  .seg.view button{padding:11px 14px}
+  #scope{width:100%}
+  #scope button{padding:11px 2px;font-size:12.5px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 calc(-1*max(16px,env(safe-area-inset-left))) 12px;padding:2px max(16px,env(safe-area-inset-left)) 8px;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;padding:10px 16px;font-size:14px;scroll-snap-align:start}
+
+  .grid{grid-template-columns:minmax(0,1fr);gap:12px;padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+  .card{padding:20px;border-radius:20px}
+  .card h3{font-size:28px}
+  .save{padding:13px;margin:-13px -13px -13px 0}
+  .grid.list .card{flex-direction:column;align-items:stretch;gap:10px;padding:16px 18px}
+  .grid.list .card .top{flex-direction:row;width:100%;align-items:center;justify-content:space-between}
+  .grid.list .card h3{flex:none;font-size:26px}
+  .grid.list .card .avgrow{width:100%}
+
+  /* bottom-sheet detail panel */
+  .drawer{top:auto;left:0;right:0;bottom:0;width:100%;height:min(92vh,92dvh);border-left:0;border-top:1px solid var(--line);border-radius:26px 26px 0 0;transform:translateY(104%);padding:10px 20px calc(44px + env(safe-area-inset-bottom));overscroll-behavior:contain;box-shadow:0 -30px 60px -30px rgba(0,0,0,.4)}
+  .drawer.open{transform:none}
+  .grab{display:block;width:44px;height:5px;border-radius:5px;background:var(--line);margin:0 auto 14px}
+  .drawer h2{font-size:38px}
+  .big b{font-size:56px}
+  .yr{padding:16px}
+  .star svg{width:46px;height:46px}
+  .yr .row{flex-wrap:wrap;gap:10px}
+  .yr .row .btn{min-height:46px;padding:12px 24px}
+
+  /* bottom-sheet modal */
+  .ov{place-items:end stretch;padding:0}
+  .modal{max-width:none;max-height:94vh;max-height:94dvh;overflow-y:auto;border-radius:28px 28px 0 0;padding:28px 22px calc(28px + env(safe-area-inset-bottom));transform:translateY(100%)}
+  .ov.open .modal{transform:none}
+  .modal h2{font-size:32px}
+  .field input{padding:14px}
+  .btn.full{min-height:50px}
+  .x{top:16px;right:18px;padding:8px}
+}
+@media(max-width:480px){
+  .nav-r [data-auth=up]{display:none}
+}
 @media(prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}.rv,h1 .w{opacity:1;transform:none;filter:none}.track{animation:none}}
 </style>
 </head>
@@ -241,7 +330,7 @@ footer a{color:inherit}
 
 <main class="wrap" id="models">
   <div class="tools">
-    <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" placeholder="Search models or makers" aria-label="Search" autocomplete="off"><kbd>/</kbd></label>
+    <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" placeholder="Search models or makers" aria-label="Search" autocomplete="off"><kbd class="kbhint">/</kbd></label>
     <select id="sort" aria-label="Sort">
       <option value="new">Newest</option><option value="top">Top rated</option><option value="most">Most rated</option><option value="az">A–Z</option>
     </select>
@@ -256,7 +345,7 @@ footer a{color:inherit}
     </div>
   </div>
   <div class="chips" id="chips"></div>
-  <div class="count"><span id="count"></span><span>Press <kbd>?</kbd> for shortcuts</span></div>
+  <div class="count"><span id="count"></span><span class="kbhint">Press <kbd>?</kbd> for shortcuts</span></div>
   <div class="grid" id="grid"></div>
 </main>
 
@@ -542,13 +631,14 @@ if (fine) {
 
 /* ---------- drawer ---------- */
 const drawer = $("#drawer"), scrim = $("#dscrim");
-function closeDrawer() { drawer.classList.remove("open"); scrim.classList.remove("open"); state.open = null; syncHash(); }
+const updateLock = () => document.body.classList.toggle("lock", drawer.classList.contains("open") || $("#ov").classList.contains("open"));
+function closeDrawer() { drawer.classList.remove("open"); scrim.classList.remove("open"); state.open = null; updateLock(); syncHash(); }
 scrim.onclick = closeDrawer;
 async function openModel(id) {
   const m = state.models.find(x => x.id === id); if (!m) return;
   state.open = id; syncHash();
   const mine = m.mine, max = Math.max(1, ...m.dist), saved = state.saved.has(id);
-  drawer.innerHTML = `<div class="dh"><span class="mk">${esc(m.maker)} · ${esc(m.kind)} · ${fmtDate(m.date)}</span>
+  drawer.innerHTML = `<div class="grab"></div><div class="dh"><span class="mk">${esc(m.maker)} · ${esc(m.kind)} · ${fmtDate(m.date)}</span>
       <div class="acts"><button class="btn icon save ${saved ? "on" : ""}" id="dsave" aria-label="Save">${bookmark}</button>
       <button class="btn icon" id="share" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.700l1-1"/></svg></button>
       <button class="btn icon" id="dclose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div></div>
@@ -561,7 +651,7 @@ async function openModel(id) {
       <textarea id="rt" maxlength="500" placeholder="Optional: what did you think?">${mine ? esc(mine.review) : ""}</textarea>
       <div class="row"><span class="hint">Tip: press <kbd>1</kbd>–<kbd>5</kbd></span><span style="display:flex;gap:8px">${mine ? `<button class="btn" id="rm">Remove</button>` : ""}<button class="btn p" id="sv">${state.user ? (mine ? "Update" : "Submit") : "Sign in"}</button></span></div></div>
     <h5>Reviews</h5><div id="rvs"><div class="sub">Loading…</div></div>`;
-  drawer.classList.add("open"); scrim.classList.add("open"); drawer.scrollTop = 0;
+  drawer.classList.add("open"); scrim.classList.add("open"); drawer.scrollTop = 0; updateLock();
   requestAnimationFrame(() => requestAnimationFrame(() => drawer.querySelectorAll(".meter div[data-w]").forEach(d => d.style.width = d.dataset.w + "%")));
   drawer.dataset.stars = mine ? mine.stars : 0;
   try {
@@ -570,8 +660,25 @@ async function openModel(id) {
     $("#rvs").innerHTML = reviews.length ? reviews.map(r => `<div class="rev"><div class="h"><b>${esc(r.name)}</b>${starsHtml(r.stars, "sm")}</div>${esc(r.review)}</div>`).join("") : `<div class="sub">No written reviews yet.</div>`;
   } catch {}
 }
+let sy = null, sdy = 0;
+drawer.addEventListener("touchstart", e => {
+  if (innerWidth > 700 || drawer.scrollTop > 0 || e.target.closest("textarea")) return;
+  sy = e.touches[0].clientY; sdy = 0; drawer.style.transition = "none";
+}, { passive: true });
+drawer.addEventListener("touchmove", e => {
+  if (sy === null) return;
+  sdy = e.touches[0].clientY - sy;
+  if (sdy > 0) drawer.style.transform = `translateY(${sdy}px)`;
+  else { sy = null; drawer.style.transition = ""; drawer.style.transform = ""; }
+}, { passive: true });
+drawer.addEventListener("touchend", () => {
+  if (sy === null) return;
+  drawer.style.transition = ""; drawer.style.transform = "";
+  if (sdy > 110) closeDrawer();
+  sy = null; sdy = 0;
+});
 function paint(n) { drawer.querySelectorAll("#ys .star").forEach(s => s.classList.toggle("on", +s.dataset.n <= n)); }
-function pick(n, el) { drawer.dataset.stars = n; paint(n); const b = drawer.querySelector(`#ys .star[data-n="${n}"]`); b.classList.remove("pop"); void b.offsetWidth; b.classList.add("pop"); const r = b.getBoundingClientRect(); burst(r.left + r.width / 2, r.top + r.height / 2); }
+function pick(n, el) { drawer.dataset.stars = n; paint(n); try { navigator.vibrate && navigator.vibrate(8); } catch (e) {} const b = drawer.querySelector(`#ys .star[data-n="${n}"]`); b.classList.remove("pop"); void b.offsetWidth; b.classList.add("pop"); const r = b.getBoundingClientRect(); burst(r.left + r.width / 2, r.top + r.height / 2); }
 drawer.addEventListener("mouseover", e => { const b = e.target.closest("#ys .star"); if (b) paint(+b.dataset.n); });
 drawer.addEventListener("mouseout", e => { if (e.target.closest("#ys")) paint(+drawer.dataset.stars); });
 drawer.addEventListener("click", async e => {
@@ -579,7 +686,11 @@ drawer.addEventListener("click", async e => {
   if (e.target.closest("#dclose")) return closeDrawer();
   if (e.target.closest("#dsave")) return toggleSave(id);
   if (e.target.closest("#share")) {
-    const url = location.origin + location.pathname + "#m=" + id;
+    const url = location.origin + location.pathname + "#m=" + id, mm = state.models.find(x => x.id === id);
+    if (navigator.share && matchMedia("(hover: none)").matches) {
+      try { await navigator.share({ title: mm ? mm.name + " · Rate the Models" : "Rate the Models", url }); return; }
+      catch (er) { if (er && er.name === "AbortError") return; }
+    }
     try { await navigator.clipboard.writeText(url); toast("Link copied"); } catch { prompt("Copy this link", url); }
     return;
   }
@@ -601,8 +712,8 @@ async function apply(model) {
 
 /* ---------- modals ---------- */
 const ov = $("#ov"), modal = $("#modal");
-function showModal(html) { modal.innerHTML = `<button class="x" aria-label="Close">×</button>` + html; ov.classList.add("open"); setTimeout(() => modal.querySelector("input")?.focus(), 350); }
-const closeModal = () => ov.classList.remove("open");
+function showModal(html) { modal.innerHTML = `<button class="x" aria-label="Close">×</button>` + html; ov.classList.add("open"); updateLock(); setTimeout(() => { if (matchMedia("(hover: hover)").matches) modal.querySelector("input")?.focus(); }, 350); }
+const closeModal = () => { ov.classList.remove("open"); updateLock(); };
 ov.addEventListener("click", e => { if (e.target === ov || e.target.classList.contains("x")) closeModal(); });
 
 /* ---------- FEATURE 4: keyboard shortcuts ---------- */

@@ -1,0 +1,13 @@
+{
+  "name": "Rate the Models",
+  "short_name": "Rate Models",
+  "description": "Rate every major AI model released in September 2026.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf8f5",
+  "theme_color": "#4f46e5",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
