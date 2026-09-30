@@ -4,44 +4,97 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Terms of Service · Rate the Models</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Instrument+Serif&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#faf8f5;--ink:#1c1b1a;--muted:#77736d;--accent:#4f46e5}
-@media(prefers-color-scheme:dark){:root{--bg:#141312;--ink:#f3f0ea;--muted:#9b968d;--accent:#8b85ff}}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif}
-main{max-width:680px;margin:0 auto;padding:56px 24px 96px}
-h1{font:400 48px/1.05 'Instrument Serif',serif;margin:0 0 8px}
-h2{font-size:18px;margin:36px 0 6px}
-p,li{color:var(--muted)}
-a{color:var(--accent)}
-</style>
+<meta name="description" content="The rules for using Rate the Models.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>try{var t=JSON.parse(localStorage.getItem("rtm_theme"));if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="legal.css">
 </head>
 <body>
-<main>
-<a href="./">← Rate the Models</a>
-<h1>Terms of Service</h1>
-<p>Last updated: 30 September 2026</p>
+<div class="progress" id="prog"></div>
+<div class="mesh"><i></i><i></i></div>
 
-<h2>Using the site</h2>
-<p>Rate the Models is a free community site for rating AI models. By creating an account or using the site you agree to these terms.</p>
+<nav><div class="wrap">
+  <a class="logo" href="./"><i></i>Rate the Models</a>
+  <div class="nav-r">
+    <a class="btn" href="privacy.html">Privacy</a>
+    <button class="btn icon" id="theme" aria-label="Toggle theme"><svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+    <a class="btn" href="./">← Back to site</a>
+  </div>
+</div></nav>
 
-<h2>Your account</h2>
-<p>Keep your login details safe. You're responsible for activity under your account. Provide a real email address and don't impersonate others.</p>
+<header class="wrap hero">
+  <div class="eyebrow">The ground rules</div>
+  <h1 data-split>Terms of Service</h1>
+  <p class="lede">A short set of rules so the ratings stay honest and the community stays friendly.</p>
+  <div class="meta"><span class="pill">Last updated 30 September 2026</span><span class="pill">About a 2 minute read</span></div>
+</header>
 
-<h2>Your content</h2>
-<p>Ratings and reviews you post are public and shown with your name. Post only your own honest opinions. Don't post spam, hate, harassment, personal information about others, or anything illegal. We may remove content or accounts that break these rules.</p>
+<div class="wrap layout">
+  <aside class="toc" aria-label="On this page">
+    <h6>On this page</h6>
+    <a href="#using">Using the site</a>
+    <a href="#account">Your account</a>
+    <a href="#content">Your content</a>
+    <a href="#guarantees">No guarantees</a>
+    <a href="#liability">Liability</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#contact">Contact</a>
+  </aside>
 
-<h2>No guarantees</h2>
-<p>Ratings are personal opinions from users, not professional advice or verified benchmarks. Model information is provided as-is and may be incomplete or out of date. The site is provided without warranties and may change or stop at any time.</p>
+  <main>
+    <section class="sec" id="using">
+      <h2><span>01</span>Using the site</h2>
+      <p>Rate the Models is a free community site for rating AI models. By creating an account or using the site you agree to these terms.</p>
+    </section>
 
-<h2>Liability</h2>
-<p>To the extent permitted by law, we are not liable for any loss arising from your use of the site.</p>
+    <section class="sec" id="account">
+      <h2><span>02</span>Your account</h2>
+      <ul>
+        <li>Keep your login details safe. You're responsible for activity under your account.</li>
+        <li>Use a real email address.</li>
+        <li>Don't impersonate other people.</li>
+      </ul>
+    </section>
 
-<h2>Privacy</h2>
-<p>How we handle your data is described in the <a href="privacy.html">Privacy Policy</a>.</p>
+    <section class="sec" id="content">
+      <h2><span>03</span>Your content</h2>
+      <p>Ratings and reviews you post are public and shown with your name. Post only your own honest opinions.</p>
+      <ul>
+        <li>No spam, hate, or harassment.</li>
+        <li>No personal information about other people.</li>
+        <li>Nothing illegal.</li>
+      </ul>
+      <div class="callout"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>We may remove content or accounts that break these rules.</span></div>
+    </section>
 
-<h2>Contact</h2>
-<p><a href="https://github.com/Crepald-01/Rate-A-Model/issues">Open an issue</a> with any questions.</p>
-</main>
+    <section class="sec" id="guarantees">
+      <h2><span>04</span>No guarantees</h2>
+      <p>Ratings are personal opinions from users, not professional advice or verified benchmarks. Model information is provided as-is and may be incomplete or out of date. The site is provided without warranties and may change or stop at any time.</p>
+    </section>
+
+    <section class="sec" id="liability">
+      <h2><span>05</span>Liability</h2>
+      <p>To the extent permitted by law, we are not liable for any loss arising from your use of the site.</p>
+    </section>
+
+    <section class="sec" id="privacy">
+      <h2><span>06</span>Privacy</h2>
+      <p>How we handle your data is described in the <a href="privacy.html">Privacy Policy</a>.</p>
+    </section>
+
+    <section class="sec" id="contact">
+      <h2><span>07</span>Contact</h2>
+      <p>Questions? <a href="https://github.com/Crepald-01/Rate-A-Model/issues" target="_blank" rel="noopener">Open an issue on GitHub</a>.</p>
+    </section>
+
+    <a class="crosslink" href="privacy.html"><span><small>Also read</small><b>Privacy Policy</b></span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </main>
+</div>
+
+<button class="btn icon top" id="top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+<footer><a href="./">Rate the Models</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></footer>
+<script src="legal.js"></script>
 </body>
 </html>
